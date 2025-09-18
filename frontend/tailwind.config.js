@@ -1,20 +1,19 @@
-// frontend/tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",     // ✅ add this
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./lib/**/*.{js,ts,jsx,tsx}",       // keep lib too
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",   // 👈 add this
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#6366F1", // indigo-500
+          DEFAULT: "#6366F1",
           600: "#4F46E5",
         },
-        muted: "#6B7280", // slate-500
+        muted: "#6B7280",
       },
       borderRadius: {
         xl: "1rem",
