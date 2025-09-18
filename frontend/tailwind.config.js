@@ -4,7 +4,7 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./lib/**/*.{js,ts,jsx,tsx}",   // 👈 add this too
+    "./lib/**/*.{js,ts,jsx,tsx}", // include lib too
   ],
   theme: {
     extend: {
@@ -13,14 +13,14 @@ module.exports = {
           DEFAULT: '#6366F1', // indigo-500
           600: '#4F46E5',
         },
-        muted: '#6B7280', // slate-500 for small text
+        muted: '#6B7280', // slate-500
       },
       borderRadius: {
-        'xl': '1rem',
-        '2xl': '1.5rem',
+        xl: "1rem",
+        "2xl": "1.5rem",
       },
       boxShadow: {
-        card: '0 8px 30px rgba(15, 23, 42, 0.06)',
+        card: "0 8px 30px rgba(15, 23, 42, 0.06)",
       },
     },
   },
