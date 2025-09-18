@@ -1,25 +1,18 @@
 "use client";
 
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import Image from "next/image";
+import type { TypedObject } from "@portabletext/types";
 
-// Define custom PortableText components
 const components: PortableTextComponents = {
   types: {
-    image: ({ value }) => {
-      if (!value?.asset?.url) return null;
-      return (
-        <div className="my-4 rounded-lg overflow-hidden">
-          <Image
-            src={value.asset.url}
-            alt={value.alt || "Blog Image"}
-            width={800}   // adjust sizes depending on your layout
-            height={500}
-            className="rounded-lg object-cover"
-          />
-        </div>
-      );
-    },
+    image: ({ value }) =>
+      value?.asset?.url ? (
+        <img
+          src={value.asset.url}
+          alt={value.alt || "Blog Image"}
+          className="my-4 rounded-lg"
+        />
+      ) : null,
   },
   marks: {
     link: ({ children, value }) => (
@@ -36,9 +29,11 @@ const components: PortableTextComponents = {
 };
 
 interface PortableTextComponentProps {
-  value: unknown; // 👈 safer than `any`
+  value: TypedObject | TypedObject[];
 }
 
-export default function PortableTextComponent({ value }: PortableTextComponentProps) {
+export default function PortableTextComponent({
+  value,
+}: PortableTextComponentProps) {
   return <PortableText value={value} components={components} />;
 }
