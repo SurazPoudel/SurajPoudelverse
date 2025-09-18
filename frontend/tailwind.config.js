@@ -2,18 +2,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",     // ✅ add this
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./lib/**/*.{js,ts,jsx,tsx}", // include lib too
+    "./lib/**/*.{js,ts,jsx,tsx}",       // keep lib too
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#6366F1', // indigo-500
-          600: '#4F46E5',
+          DEFAULT: "#6366F1", // indigo-500
+          600: "#4F46E5",
         },
-        muted: '#6B7280', // slate-500
+        muted: "#6B7280", // slate-500
       },
       borderRadius: {
         xl: "1rem",
